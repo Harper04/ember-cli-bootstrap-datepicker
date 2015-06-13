@@ -68,7 +68,7 @@ export default Ember.Mixin.create({
     if (value){
         this.set('value', moment(value).format("YYYY-MM-DD"));
     }else{
-        this.set('value', undefined);
+        this.set('value', null);
     }
     this.sendAction('changeDate', value);
   },
