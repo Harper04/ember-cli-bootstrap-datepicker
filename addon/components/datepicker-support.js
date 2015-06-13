@@ -64,8 +64,8 @@ export default Ember.Mixin.create({
       }
     }
 
-    this.set('mustUpdateInput', false); 
-    this.set('value', value);
+    this.set('mustUpdateInput', false);
+    this.set('value', moment(value).format("YYYY-MM-DD"));
     this.sendAction('changeDate', value);
   },
 
@@ -101,6 +101,9 @@ export default Ember.Mixin.create({
         break;
       case 'date':
         dates = [value];
+        break;
+      case 'string':
+        dates = [moment(value)._d];
         break;
       default:
         dates = [null];
