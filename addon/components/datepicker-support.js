@@ -37,7 +37,7 @@ export default Ember.Mixin.create({
         weekStart: this.get('weekStart')
       }).
       on('changeDate', function(event) {
-        Ember.run(function() {
+        Ember.run.once(self, function() {
           self._didChangeDate(event);
         });
       });
